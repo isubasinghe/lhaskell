@@ -20,7 +20,12 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/githubuser/lhaskell#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+  - liquid-base
+  - liquidhaskell >= 0.8.10
+  - liquid-prelude ==0.8.10.2
+build-tools:
+  - liquid-base
+  - liquidhaskell >= 0.8.10
 
 library:
   source-dirs: src
@@ -33,6 +38,7 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -fplugin=LiquidHaskell
     dependencies:
     - lhaskell
 
@@ -44,5 +50,6 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -fplugin=LiquidHaskell
     dependencies:
     - lhaskell
